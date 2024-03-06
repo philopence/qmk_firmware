@@ -4,33 +4,12 @@
 #include QMK_KEYBOARD_H
 
 enum layer_names {
-    _COLMAK_DH,
+    _QWERTY,
     _EXT,
     _SYM,
     _NUM,
     _FUN,
-    _QWERTY,
 };
-
-#define EXT_SPC LT(_EXT, KC_SPC)
-#define SYM_ESC LT(_SYM, KC_ESC)
-#define SYM_ENT LT(_SYM, KC_ENT)
-#define NUM_TAB LT(_NUM, KC_TAB)
-#define FUN_BSPC LT(_FUN, KC_BSPC)
-#define FUN_DEL LT(_FUN, KC_DEL)
-#define SFT_BSPC RSFT_T(KC_BSPC)
-
-#define H_A HYPR_T(KC_A)
-#define LA_R LALT_T(KC_R)
-#define LC_S LCTL_T(KC_S)
-#define LS_T LSFT_T(KC_T)
-#define LG_G LGUI_T(KC_G)
-
-#define RG_M RGUI_T(KC_M)
-#define RS_N RSFT_T(KC_N)
-#define RC_E RCTL_T(KC_E)
-#define RA_I RALT_T(KC_I)
-#define H_O HYPR_T(KC_O)
 
 #define OSM_LGUI OSM(MOD_LGUI)
 #define OSM_LALT OSM(MOD_LALT)
@@ -44,45 +23,65 @@ enum layer_names {
 
 #define OSM_HYPR OSM(MOD_HYPR)
 
-const uint16_t PROGMEM w_f_combo[] = {KC_W, KC_F, COMBO_END};
-const uint16_t PROGMEM f_p_combo[] = {KC_F, KC_P, COMBO_END};
-const uint16_t PROGMEM r_s_combo[] = {LA_R, LC_S, COMBO_END};
-const uint16_t PROGMEM s_t_combo[] = {LC_S, LS_T, COMBO_END};
-const uint16_t PROGMEM x_c_combo[] = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM c_d_combo[] = {KC_C, KC_D, COMBO_END};
+#define EXT_SPC LT(_EXT, KC_SPC)
+#define SYM_ESC LT(_SYM, KC_ESC)
+#define SYM_ENT LT(_SYM, KC_ENT)
+#define NUM_TAB LT(_NUM, KC_TAB)
+#define FUN_BSPC LT(_FUN, KC_BSPC)
+#define FUN_DEL LT(_FUN, KC_DEL)
+#define SFT_BSPC RSFT_T(KC_BSPC)
 
-const uint16_t PROGMEM y_u_combo[] = {KC_Y, KC_U, COMBO_END};
-const uint16_t PROGMEM u_l_combo[] = {KC_U, KC_L, COMBO_END};
-const uint16_t PROGMEM i_e_combo[] = {RA_I, RC_E, COMBO_END};
-const uint16_t PROGMEM e_n_combo[] = {RC_E, RS_N, COMBO_END};
+#define H_A HYPR_T(KC_A)
+#define LA_S LALT_T(KC_S)
+#define LC_D LCTL_T(KC_D)
+#define LS_F LSFT_T(KC_F)
+#define LG_G LGUI_T(KC_G)
+
+#define RG_H RGUI_T(KC_H)
+#define RS_J RSFT_T(KC_J)
+#define RC_K RCTL_T(KC_K)
+#define RA_L RALT_T(KC_L)
+#define H_SCLN HYPR_T(KC_SCLN)
+
+const uint16_t PROGMEM w_e_combo[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM e_r_combo[] = {KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM s_d_combo[] = {LA_S, LC_D, COMBO_END};
+const uint16_t PROGMEM d_f_combo[] = {LC_D, LS_F, COMBO_END};
+const uint16_t PROGMEM x_c_combo[] = {KC_X, KC_C, COMBO_END};
+const uint16_t PROGMEM c_v_combo[] = {KC_C, KC_V, COMBO_END};
+
+const uint16_t PROGMEM o_i_combo[] = {KC_O, KC_I, COMBO_END};
+const uint16_t PROGMEM i_u_combo[] = {KC_I, KC_U, COMBO_END};
+const uint16_t PROGMEM l_k_combo[] = {RA_L, RC_K, COMBO_END};
+const uint16_t PROGMEM k_j_combo[] = {RC_K, RS_J, COMBO_END};
 const uint16_t PROGMEM dot_comm_combo[] = {KC_DOT, KC_COMM, COMBO_END};
-const uint16_t PROGMEM comm_h_combo[] = {KC_COMM, KC_H, COMBO_END};
+const uint16_t PROGMEM comm_m_combo[] = {KC_COMM, KC_M, COMBO_END};
 
 combo_t key_combos[] = {
-  COMBO(w_f_combo, KC_LBRC),
-  COMBO(f_p_combo, KC_RBRC),
-  COMBO(r_s_combo, KC_LPRN),
-  COMBO(s_t_combo, KC_RPRN),
+  COMBO(w_e_combo, KC_LBRC),
+  COMBO(e_r_combo, KC_RBRC),
+  COMBO(s_d_combo, KC_LPRN),
+  COMBO(d_f_combo, KC_RPRN),
   COMBO(x_c_combo, KC_LCBR),
-  COMBO(c_d_combo, KC_RCBR),
+  COMBO(c_v_combo, KC_RCBR),
 
-  COMBO(y_u_combo, KC_MINS),
-  COMBO(u_l_combo, KC_PLUS),
-  COMBO(i_e_combo, KC_EQL),
-  COMBO(e_n_combo, KC_UNDS),
-  COMBO(dot_comm_combo, KC_SCLN),
-  COMBO(comm_h_combo, KC_COLN),
+  COMBO(o_i_combo, KC_MINS),
+  COMBO(i_u_combo, KC_PLUS),
+  COMBO(l_k_combo, KC_EQL),
+  COMBO(k_j_combo, KC_UNDS),
+  COMBO(dot_comm_combo, KC_QUOT),
+  COMBO(comm_m_combo, KC_DQUO),
 };
 //////////////////////
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_COLMAK_DH] = LAYOUT(
+    [_QWERTY] = LAYOUT(
   //,--------------------------------------------.                    ,--------------------------------------------.
-         KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT,
+         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-          H_A,    LA_R,    LC_S,    LS_T,    LG_G,                         RG_M,    RS_N,    RC_E,    RA_I,     H_O,
+          H_A,    LA_S,    LC_D,    LS_F,    LG_G,                         RG_H,    RS_J,    RC_K,    RA_L,  H_SCLN,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-         KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,
+         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                  NUM_TAB, EXT_SPC, SYM_ESC,    SYM_ENT,SFT_BSPC, FUN_DEL
                              //`--------------------------'  `--------------------------'
@@ -90,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_EXT] = LAYOUT(
   //,--------------------------------------------.                    ,--------------------------------------------.
-        TG(5), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PGUP, KC_HOME,   KC_UP,  KC_END, XXXXXXX,
+      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PGUP, KC_HOME,   KC_UP,  KC_END, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
      OSM_HYPR,OSM_LALT,OSM_LCTL,OSM_LSFT,OSM_LGUI,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
@@ -102,11 +101,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM] = LAYOUT(
   //,--------------------------------------------.                    ,--------------------------------------------.
-      XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_AMPR, KC_ASTR, XXXXXXX,  KC_GRV,
+      XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_AMPR, KC_ASTR, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, XXXXXXX,                      KC_TILD,  KC_DLR, KC_PERC, KC_CIRC, KC_PIPE,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      XXXXXXX, KC_LABK, KC_RABK, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_EXLM,   KC_AT, KC_HASH, KC_BSLS,
+      XXXXXXX, KC_LABK, KC_RABK, XXXXXXX, XXXXXXX,                       KC_GRV, KC_EXLM,   KC_AT, KC_HASH, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                  XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                              //`--------------------------'  `--------------------------'
@@ -133,18 +132,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,                      XXXXXXX, KC_BRID, XXXXXXX, KC_BRIU, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                  XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
-                             //`--------------------------'  `--------------------------'
-  ),
-
-    [_QWERTY] = LAYOUT(
-  //,--------------------------------------------.                    ,--------------------------------------------.
-         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-  //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-         KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,
-  //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
-  //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                 NUM_TAB, EXT_SPC, SYM_ESC,    SYM_ENT,SFT_BSPC, TG(_QWERTY)
                              //`--------------------------'  `--------------------------'
   )
 
