@@ -84,19 +84,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
          KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                 NUM_TAB, EXT_SPC, SYM_ESC,    SYM_ENT,SFT_BSPC, FUN_DEL
+                                 NUM_TAB, EXT_SPC, SYM_ESC,    SYM_ENT, KC_LSFT, FUN_BSPC
                              //`--------------------------'  `--------------------------'
   ),
 
     [_EXT] = LAYOUT(
   //,--------------------------------------------.                    ,--------------------------------------------.
-        TG(5), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PGUP, KC_HOME,   KC_UP,  KC_END, XXXXXXX,
+  TG(_QWERTY), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PGUP, KC_HOME,   KC_UP,  KC_END, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
      OSM_HYPR,OSM_LALT,OSM_LCTL,OSM_LSFT,OSM_LGUI,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                 XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
+                                 XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX,  KC_DEL
                              //`--------------------------'  `--------------------------'
   ),
 
